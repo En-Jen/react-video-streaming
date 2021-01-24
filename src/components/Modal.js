@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 const Modal = props => {
     return ReactDOM.createPortal(
         <div onClick={props.onDismiss} className="ui dimmer modals visible active">
+            //stopPropagation prevents click event from bubbling up so that if user clicks on modal box, it doesn't navigate the user back to the home page
             <div onClick={(e) => e.stopPropagation()} className="ui standard modal visible active">
                 <div className="header">{props.title}</div>
                 <div className="content">{props.content}</div>
